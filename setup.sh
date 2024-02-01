@@ -34,7 +34,8 @@ sudo chmod 664 /var/nvidia/nvcam/settings/camera_overrides.isp
 sudo chown root:root /var/nvidia/nvcam/settings/camera_overrides.isp
 
 # Install dependencies
+sudo apt-get install -y libfreetype6-dev
 sudo apt-get install -y python3-pip python3-pandas python3-matplotlib python3-sklearn python3-sklearn-lib
 pip3 install --upgrade pip
 pip3 install cython setuptools packaging
-pip3 install ipykernel numpy pandas matplotlib seaborn scikit-learn 
+pip3 install ipykernel numpy pandas matplotlib seaborn==0.9.1 scikit-learn 
