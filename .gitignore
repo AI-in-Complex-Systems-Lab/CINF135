@@ -1,0 +1,4 @@
+.vscode/
+venv/
+*.zip
+.DS_Store
