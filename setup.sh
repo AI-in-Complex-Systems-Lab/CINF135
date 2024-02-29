@@ -39,3 +39,16 @@ sudo apt-get install -y python3-pip python3-pandas python3-matplotlib python3-sk
 pip3 install --upgrade pip
 pip3 install cython setuptools packaging
 pip3 install ipykernel numpy pandas matplotlib seaborn==0.9.1 scikit-learn 
+
+
+# Create an update service
+RC_LOCAL_PATH="/etc/rc.local"
+
+touch "$RC_LOCAL_PATH"
+chmod +x "$RC_LOCAL_PATH"
+cat <<EOT > "$RC_LOCAL_PATH"
+#!/bin/sh -e
+
+cd Desktop/CINF135; git reset --hard HEAD; git pull
+exit 0
+EOT
