@@ -45,11 +45,13 @@ pip3 install ipykernel numpy pandas matplotlib seaborn==0.9.1 scikit-learn
 CURR_DIR=$(pwd)
 RC_LOCAL_PATH="/etc/rc.local"
 
-touch "$RC_LOCAL_PATH"
-chmod +x "$RC_LOCAL_PATH"
-cat <<EOT > "$RC_LOCAL_PATH"
+sudo touch "$RC_LOCAL_PATH"
+sudo chmod +x "$RC_LOCAL_PATH"
+sudo cat <<EOT > "$RC_LOCAL_PATH"
 #!/bin/sh -e
-
+sleep 10
+sudo /usr/bin/jetson_clocks
+sudo sh -c 'echo 255 > /sys/devices/pwm-fan/target_pwm'
 cd "$CURR_DIR"; git reset --hard HEAD; git pull
 exit 0
 EOT
