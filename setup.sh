@@ -42,6 +42,7 @@ pip3 install ipykernel numpy pandas matplotlib seaborn==0.9.1 scikit-learn
 
 
 # Create an update service
+CURR_DIR=$(pwd)
 RC_LOCAL_PATH="/etc/rc.local"
 
 touch "$RC_LOCAL_PATH"
@@ -49,6 +50,6 @@ chmod +x "$RC_LOCAL_PATH"
 cat <<EOT > "$RC_LOCAL_PATH"
 #!/bin/sh -e
 
-cd Desktop/CINF135; git reset --hard HEAD; git pull
+cd "$CURR_DIR"; git reset --hard HEAD; git pull
 exit 0
 EOT
