@@ -17,4 +17,12 @@ jupyter lab --allow-root --port=8888 --no-browser --ServerApp.token='' --ServerA
 exit 0
 EOT
 
+
+# Camera Configuration
+CONFIG_FILE="/boot/firmware/config.txt"
+
+sed -i 's/camera_auto_detect=1/camera_auto_detect=0/' "$CONFIG_FILE"
+sed -i '/\[all\]/a dtoverlay=imx219' "$CONFIG_FILE"
+
+sleep 3
 sudo reboot now

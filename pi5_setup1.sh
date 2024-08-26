@@ -13,4 +13,6 @@ apt-get clean
 export PATH=/home/pi/.local/bin:$PATH 
 
 pip3 install --upgrade pip --break-system-packages
+
+sleep 3
 sudo reboot now
