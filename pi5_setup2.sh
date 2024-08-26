@@ -14,11 +14,11 @@ sudo cat <<EOT > "$RC_LOCAL_PATH"
 sleep 5
 exec > /tmp/rc.local.out 2>&1; set -x
 jupyter lab --allow-root --port=8888 --no-browser --ServerApp.token='' --ServerApp.allow_origin='*' --notebook-dir=/home/pi/Desktop --Application.log_level=40 &
+export PATH=/home/pi/.local/bin:$PATH
 exit 0
 EOT
 
 
-# Camera Configuration
 CONFIG_FILE="/boot/firmware/config.txt"
 
 sed -i 's/camera_auto_detect=1/camera_auto_detect=0/' "$CONFIG_FILE"

@@ -1,16 +1,8 @@
-sudo su -
-apt-get update
-apt-get install -y python3-pip
-apt-get install -y python3-matplotlib
-apt-get install -y python3-numpy
-apt-get install -y python3-scipy
-apt-get install -y python3-pandas
-apt-get install -y python3-seaborn
-apt-get install -y python3-opencv
-apt-get install -y python3-sklearn
-apt-get clean
+sudo apt-get update
 
-export PATH=/home/pi/.local/bin:$PATH 
+sudo apt-get install -y python3-pip python3-matplotlib python3-numpy python3-scipy python3-pandas python3-seaborn python3-opencv python3-sklearn
+
+sudo apt-get clean
 
 pip3 install --upgrade pip --break-system-packages
 
