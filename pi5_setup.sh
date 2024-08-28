@@ -1,3 +1,11 @@
+sudo apt-get update
+
+sudo apt-get install -y python3-pip python3-matplotlib python3-numpy python3-scipy python3-pandas python3-seaborn python3-opencv python3-sklearn
+
+sudo apt-get clean
+
+pip3 install --upgrade pip --break-system-packages
+
 pip3 install torch torchvision torchaudio --break-system-packages
 pip3 install jupyter jupyterlab ipykernel --break-system-packages
 
@@ -11,7 +19,7 @@ sudo touch "$RC_LOCAL_PATH"
 sudo chmod +x "$RC_LOCAL_PATH"
 sudo cat <<EOT > "$RC_LOCAL_PATH"
 #!/bin/sh -e
-sleep 5
+sleep 2
 exec > /tmp/rc.local.out 2>&1; set -x
 jupyter lab --allow-root --port=8888 --no-browser --ServerApp.token='' --ServerApp.allow_origin='*' --notebook-dir=/home/pi/Desktop --Application.log_level=40 &
 export PATH=/home/pi/.local/bin:$PATH
