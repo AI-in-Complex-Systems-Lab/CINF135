@@ -23,11 +23,6 @@ sleep 2
 exec > /tmp/rc.local.out 2>&1; set -x
 jupyter lab --allow-root --port=8888 --no-browser --ServerApp.token='' --ServerApp.allow_origin='*' --notebook-dir=/home/pi/Desktop --Application.log_level=40 &
 export PATH=/home/pi/.local/bin:$PATH
-
-sleep 30
-if ping -q -c 1 -W 1 github.com >/dev/null 2>&1; then
-    echo "Internet is connected. Proceeding with script execution."
-    cd /home/pi/Desktop/ && sudo rm -rf CINF135 && git clone https://github.com/AI-in-Complex-Systems-Lab/CINF135.git
 exit 0
 EOT
 
